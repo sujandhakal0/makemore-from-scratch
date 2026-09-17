@@ -1,0 +1,27 @@
+name: makemore
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - pip
+  # core scientific stack (used in Karpathy's makemore / zero-to-hero)
+  - numpy
+  - matplotlib
+  - scipy
+  - pandas
+  - scikit-learn
+  - tqdm
+  # jupyter
+  - jupyter
+  - notebook
+  - ipykernel
+  - nb_conda_kernels
+  - pip:
+    # CPU-only PyTorch (no NVIDIA GPU detected on this machine).
+    # If you later get an NVIDIA GPU, reinstall with:
+    #   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+    - --index-url https://download.pytorch.org/whl/cpu
+    - torch
+    - torchvision
+    - torchaudio
